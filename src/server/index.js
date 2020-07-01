@@ -1,7 +1,10 @@
 var path = require('path')
 const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
 
+// requiring the dotenv to hide my api key
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -10,7 +13,12 @@ var aylien = require("aylien_textapi");
 
 const app = express()
 
-console.log(`Your API key is ${process.env.API_KEY}`);
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
+app.use(cors());
 
 // You could call it aylienapi, or anything else
 var textapi = new aylien({
@@ -33,6 +41,15 @@ app.listen(8080, function() {
     console.log('Example app listening on port 8080!')
 })
 
-app.get('/test', function(req, res) {
-    res.send(mockAPIResponse)
-})
+app.post('/test', detectSentiment)
+
+function detectSentiment(req, res) {
+    textapi.sentiment({
+        'text': req.body.formText
+    }, function(error, response) {
+        if (error === null) {
+            console.log(response);
+            res.send(response)
+        }
+    });
+}
