@@ -6,7 +6,7 @@ async function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    await fetch('https://nlp-sentiment-detect.netlify.app/test', {
+    await fetch('/test', {
             method: 'POST',
             credentials: 'same-origin',
             headers: {
