@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {String} polarity define the polarity of the text
+ * @param {string} subjectivity defie the polarity of the text
+ */
 function setResult(polarity, subjectivity) {
     const fragment = document.createDocumentFragment();
 
