@@ -1,5 +1,6 @@
 var path = require('path')
 const express = require('express')
+const serverless = require('serverless-http');
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
@@ -53,3 +54,5 @@ function detectSentiment(req, res) {
         }
     });
 }
+
+module.exports.handler = serverless(app);

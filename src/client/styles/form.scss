@@ -1,12 +1,30 @@
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
     padding: 40px;
+    #submit:focus,
+    #name:focus,
+    #submit,
+    #name {
+        outline: none;
+        background: none;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+        &#name {
+            padding-left: 10px;
+            width: 75%;
+        }
+        &#submit {
+            width: 20%;
+        }
+    }
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+.result {
+    padding-left: 40px;
+    color: white;
+    font-family: 'Rowdies', cursive;
+    font-weight: bold;
+    #result {
+        font-weight: normal;
+    }
 }

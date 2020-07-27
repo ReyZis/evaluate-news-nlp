@@ -6,7 +6,7 @@ async function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
-    await fetch('/test', {
+    await fetch('http://localhost:8080/test', {
             method: 'POST',
             credentials: 'same-origin',
             headers: {

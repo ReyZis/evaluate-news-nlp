@@ -3,47 +3,26 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title>tone detecter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <div class="">
-            Logo
-        </div>
-        <div class="">
-            navigation
-        </div>
-    </header>
-
     <main>
         <section>
             <form class="" onsubmit="return handleSubmit(event)">
-                <textarea name="input" id="name" cols="30" rows="10"></textarea>
-                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <input type="text" name="input" id="name">
+                <input type="submit" name="" id="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
             </form>
-            <section>
+        </section>
 
-                <section>
-                    <strong>Form Results:</strong>
-                    <div id="results"></div>
-                </section>
+        <section class="result">
+            <p>Form Results:</p>
+            <div id="results"></div>
+        </section>
     </main>
 
-    <footer>
-        <p>This is a footer</p>
-    </footer>
-
-    <script>
-        // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
-    </script>
 </body>
 
 </html>

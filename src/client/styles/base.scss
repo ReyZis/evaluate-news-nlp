@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(at top right, #0A4F85 0%, #944B9D 50%, #E45740 100%);
 }
 
 main {
